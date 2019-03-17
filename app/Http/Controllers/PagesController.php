@@ -11,6 +11,8 @@ class PagesController extends Controller
         $title = 'Bienvenido';
         return view('pages.index', compact('title'));
     }
-
-
+    /*
+    public function acquiredPromo(){
+        return view('promo.verifyPromo');
+    }*/
 }
