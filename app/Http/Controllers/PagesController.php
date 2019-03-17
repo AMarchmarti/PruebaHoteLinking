@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     public function index(){
         $title = 'Bienvenido';
-        return view('pages.login', compact('title'));
+        return view('pages.index', compact('title'));
     }
 
 
