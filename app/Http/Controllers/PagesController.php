@@ -11,8 +11,5 @@ class PagesController extends Controller
         return view('pages.login', compact('title'));
     }
 
-    public function offers(){
-        $title = 'Ofertas';
-        return view('pages.offers', compact('title'));
-    }
+
 }
