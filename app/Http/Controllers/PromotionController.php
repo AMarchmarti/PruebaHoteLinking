@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Request\PromotionFromRequest;
 
+use App\Promotion;
 class PromotionController extends Controller
 {
     /**
@@ -23,7 +25,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        //
+        return view('promo.verifyPromo');
     }
 
     /**
@@ -32,9 +34,18 @@ class PromotionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(PromotionFromRequest $request)
+    {   
+        $code = uniqid();
+        $promotion = new Promotion(array(
+        'id' => $request->get('id'),
+        'user_id' => $request->get('user_id'),
+        'offer_id' => $request->get('offer_id'),
+        'code' => $code,
+        'status' => $request->get('status'),
+        ));
+        $promotion.save();
+        return redirect('/verifyPromo')->with('status', 'Su oferta ha sido canjeada. El código es: '.$code); 
     }
 
     /**
