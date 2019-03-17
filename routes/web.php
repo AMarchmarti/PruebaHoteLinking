@@ -14,4 +14,4 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('/offers', 'PagesController@offers')->name('pages.offers');
+Route::resource('offers', 'OffersController');
