@@ -14,10 +14,10 @@ class CreateOffersTable extends Migration
     public function up()
     {
         Schema::create('offers', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('Offers_name')->length(10)->nullable();
+            $table->increments('id');
+            $table->string('Offers_name');
             $table->mediumText('description');
-            $table->bigIncrements('prefix');
+            $table->integer('prefix');
             $table->timestamps();
         });
     }
