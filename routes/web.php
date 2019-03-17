@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,7 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', 'PagesController@index');
+Route::get('/verifyPromo', 'PromotionController@create');
 
 Auth::routes();
 Route::resource('offers', 'OffersController');
