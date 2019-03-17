@@ -17,7 +17,7 @@ class CreateOffersTable extends Migration
             $table->increments('id');
             $table->string('Offers_name');
             $table->mediumText('description');
-            $table->integer('prefix');
+            $table->string('prefix');
             $table->timestamps();
         });
     }
