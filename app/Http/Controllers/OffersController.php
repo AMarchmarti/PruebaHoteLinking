@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Offer;
 
 class OffersController extends Controller
 {
@@ -12,8 +13,9 @@ class OffersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   $title = 'Ofertas';
+        $offers = Offer::all();
+        return view('offers.index', compact('title'))->with('offers', $offers);
     }
 
     /**
