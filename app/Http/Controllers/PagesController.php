@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
-        return view('pages.login');
+        $title = 'Bienvenido';
+        return view('pages.login', compact('title'));
     }
 
     public function offers(){
-        return view('pages.offers');
+        $title = 'Ofertas';
+        return view('pages.offers', compact('title'));
     }
 }
